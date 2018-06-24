@@ -1,0 +1,14 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    Choose the topic:
+    {% if topic_list %}
+        <ul>
+            {% for topic in topic_list %}
+            <li><a href="{{topic.title}}/">{{topic.title}}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        There are no topics yet.
+    {% endif %}
+{% endblock %}

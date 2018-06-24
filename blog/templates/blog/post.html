@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+    
+    {% if post %}
+        {{post}}
+        Published on {{post.date_published}} in {{post.topic}}
+        <br>{{post.text}}
+    {% else %}
+        There are no posts yet.
+    {% endif %}
+
+{% endblock %}

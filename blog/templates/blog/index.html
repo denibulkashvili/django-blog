@@ -1,0 +1,21 @@
+{% extends "blog/base.html" %}
+
+{% block content %}
+   
+    Hello there! This is a home Page!
+
+    Here are the latest posts
+
+    {% if post_list %}
+        <ol>
+            {% for post in post_list %}
+                <li>
+                    <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
+                </li>
+            {% endfor %}
+        </ol>
+    {% else %}
+        There are no posts yet.
+    {% endif %}
+
+{% endblock %}
