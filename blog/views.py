@@ -1,10 +1,10 @@
-from django.shortcuts import render
-from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, render
+# from django.http import Http404
 from .models import Topic, Post
 
 
 def index(request):
-    post_list = Post.objects.all().order_by('-date_published')
+    post_list = Post.objects.order_by('-date_published')
     context = {'post_list': post_list}
     return render(request, 'blog/index.html', context)
 
@@ -19,7 +19,7 @@ def topic(request, topic_title):
     return render(request, 'blog/topic.html', context)
 
 def post(request, post_title):
-    post = Post.objects.get(title=post_title)
+    post = get_object_or_404(Post, title=post_title)
     context = {'post': post}
     return render(request, 'blog/post.html', context)
 
