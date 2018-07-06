@@ -1,21 +1,23 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-   
-    Hello there! This is a home Page!
+    <div class="container">
+        <section class="home">
+            <h1>Digital Bungalow Blog</h1>
 
-    Here are the latest posts
+            <h3>Here are the latest posts</h3>
 
-    {% if post_list %}
-        <ol>
-            {% for post in post_list %}
-                <li>
-                    <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
-                </li>
-            {% endfor %}
-        </ol>
-    {% else %}
-        There are no posts yet.
-    {% endif %}
-
+            {% if post_list %}
+                <ol>
+                    {% for post in post_list %}
+                        <li>
+                            <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
+                        </li>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                There are no posts yet.
+            {% endif %}
+        </section>
+    </div>
 {% endblock %}
