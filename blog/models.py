@@ -1,10 +1,12 @@
 from django.db import models
 
+from ckeditor.fields import RichTextField
+
 # Create your models here.
 class Post(models.Model):
     """Class representing posts"""
     title = models.CharField(max_length=200)
-    text = models.TextField()
+    text = RichTextField()
     date_published = models.DateTimeField('date published')
     topic = models.ForeignKey('Topic', on_delete=models.CASCADE)
 
