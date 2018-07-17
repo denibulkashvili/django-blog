@@ -28,7 +28,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
+    'ckeditor_uploader',
 ]
+
+CKEDITOR_UPLOAD_PATH = "uploads/"
+CKEDITOR_IMAGE_BACKEND = "pillow"
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -114,3 +119,12 @@ STATIC_ROOT = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = '/media/'
+
+
+# for production production 
+# location /static/ {
+#     alias /home/blog/static/;
+# }
+# location /media/ {
+#     alias /home/blog/media/;
+# }
