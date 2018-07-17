@@ -2,23 +2,24 @@
 
 {% block content %}
     <h1 class="home-title">DIGITAL BUNGALOW</h1>
+    <h5 class="home-subtitle heading h5">A blog about programming topics that interest me the most. I cover Python, JavaScript, HTML, CSS, Git and also Machine Learning and Data Science.</h4>
     <div class="container">
         <section class="home">
             
-
-            <h3 class="home-subtitle">Here are the latest posts</h3>
-
-            {% if post_list %}
-                <ol>
-                    {% for post in post_list %}
-                        <li>
-                            <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
-                        </li>
-                    {% endfor %}
-                </ol>
-            {% else %}
-                There are no posts yet.
-            {% endif %}
+            <div class="home-latest">
+                <h3>Latest posts</h3>
+                {% if post_list %}
+                    <ol>
+                        {% for post in post_list %}
+                            <li>
+                                <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
+                            </li>
+                        {% endfor %}
+                    </ol>
+                {% else %}
+                    There are no posts yet.
+                {% endif %}
+            </div>
         </section>
     </div>
 {% endblock %}
