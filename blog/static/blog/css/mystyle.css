@@ -9,16 +9,27 @@ body {
     flex: 1 0 auto;
     min-width: 100vw;
     margin-bottom: 0;
-    
 }
+
 
 footer {
     height: 10vh;
 }
-.nav span {
-    color: white;
+#aside ul li a {
+    font-size: 150%;
 }
+.nav
+img.menu-icon {
+    height: 100%;
+}
+.iris {
+    /* background-image: url("../images/icon.png");
+    background-repeat: no-repeat; */
+    /* min-height: 16em; */
+    width: 100%;
+    /* background-size: cover; */
 
+}
 
 /* INDEX TEMPLATE */
 h1.home-title {
