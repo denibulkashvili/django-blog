@@ -7,22 +7,21 @@
         {% for topic in topic_list %}
             <div class="row">
                 <div class="col s12">
-                    <div class="card">
+                    <div class="card hoverable">
                         <div class="card-title"><h4><a href="{{topic.title}}/">{{topic.title}}</a></h4></div>
                         <ul class="collapsible">
                             <li>
                                 <div class="collapsible-header"><i class="material-icons">view_list</i>Articles</div>
-                                <div class="collapsible-body">
+                                <div class="collapsible-body left-align">
                                         <!-- loop through the posts  -->
+                                        <ul class="collection">
                                         {% for post in posts %}
-                                            <ul class="collection">
                                             {% if post.topic == topic %}
                                                 <a class="collection-item" href="../../post/{{post.title}}">{{post.title}}</a>
                                             {% endif %}
-                                            </ul>
                                         {% endfor %}
-
-                                    <a href="{{topic.title}}/">See all articles</a>
+                                        </ul>
+                                    <p><a href="{{topic.title}}/">See all articles ...</a></p>
                                 </div>
                             </li>
                         </ul>

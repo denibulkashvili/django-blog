@@ -2,12 +2,11 @@
 
 {% block content %}
     
-    The topic:
-    {{topic.title}}
+    <h3>{{topic.title}}</h3>
     {% if posts %}
-        <ul>
+        <ul class="collection">
             {% for post in posts %}
-                <li><a href="../../post/{{post.title}}">{{post.title}}</a></li>
+                <a href="../../post/{{post.title}}" class="collection-item">{{post.title}}</a></li>
             {% endfor %}
         </ul>
     {% else %}
