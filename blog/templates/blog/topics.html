@@ -1,15 +1,33 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
+<div class="container">
     <h3>Choose the topic:</h3>
-    
     {% if topic_list %}
-        <ul>
-            {% for topic in topic_list %}
-            <li><a href="{{topic.title}}/">{{topic.title}}</a></li>
-            {% endfor %}
-        </ul>
+        {% for topic in topic_list %}
+            <div class="row">
+                <div class="col s12">
+                    <div class="card">
+                        <div class="card-title"><h4>{{topic.title}}</h4></div>
+                        
+                        
+                            <ul class="collapsible">
+                                <li>
+                                    <div class="collapsible-header"><i class="material-icons">view_list</i>Articles</div>
+                                    <div class="collapsible-body">
+                                        
+                                        <a href="{{topic.title}}/">See all articles</a>
+                                    </div>
+                                </li>
+                            </ul>
+                        
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     {% else %}
         There are no topics yet.
     {% endif %}
+    
+</div>
 {% endblock %}
