@@ -8,19 +8,24 @@
             <div class="row">
                 <div class="col s12">
                     <div class="card">
-                        <div class="card-title"><h4>{{topic.title}}</h4></div>
-                        
-                        
-                            <ul class="collapsible">
-                                <li>
-                                    <div class="collapsible-header"><i class="material-icons">view_list</i>Articles</div>
-                                    <div class="collapsible-body">
-                                        
-                                        <a href="{{topic.title}}/">See all articles</a>
-                                    </div>
-                                </li>
-                            </ul>
-                        
+                        <div class="card-title"><h4><a href="{{topic.title}}/">{{topic.title}}</a></h4></div>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">view_list</i>Articles</div>
+                                <div class="collapsible-body">
+                                        <!-- loop through the posts  -->
+                                        {% for post in posts %}
+                                            <ul class="collection">
+                                            {% if post.topic == topic %}
+                                                <a class="collection-item" href="../../post/{{post.title}}">{{post.title}}</a>
+                                            {% endif %}
+                                            </ul>
+                                        {% endfor %}
+
+                                    <a href="{{topic.title}}/">See all articles</a>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>

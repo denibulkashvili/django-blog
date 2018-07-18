@@ -3,9 +3,9 @@
 {% block content %}
     
     {% if post %}
-        {{post}}
+        {{post.title}}
         Published on {{post.date_published}} in {{post.topic}}
-        <br>{{post.text|safe}}
+        <br>{{post.text|safe}} <!-- |safe for ckeditor -->
     {% else %}
         There are no posts yet.
     {% endif %}

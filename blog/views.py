@@ -1,5 +1,4 @@
 from django.shortcuts import get_object_or_404, render
-# from django.http import Http404
 from .models import Topic, Post
 
 
@@ -10,7 +9,8 @@ def index(request):
 
 def topics(request):
     topic_list = Topic.objects.order_by('title')
-    context = {'topic_list': topic_list}
+    posts = Post.objects.all()
+    context = {'topic_list': topic_list, 'posts': posts}
     return render(request, 'blog/topics.html', context)
 
 def topic(request, topic_title):
