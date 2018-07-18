@@ -15,44 +15,50 @@
 </head>
 <body>
     <div id="wrapper" class="row blue-grey lighten-5">
-        <div id="aside" class="col s2 teal ">
+        <div id="aside">
             
-            <header>
-                <a href="{% url 'index' %}">
-                    <img class="responsive-img" 
-                            src="{% static 'blog/images/icon.png' %}" 
-                            alt="bungalow-icon" 
-                            width="100%">
-                </a>
-            </header>
-            <div class="nav">
-                <div class="collection flow-text" >
-                    <a href="" 
-                        class="collection-item grey darken-4 orange-text waves-effect waves-light">
-                            navigation <span>{</span>
-                    </a>
-                    <a href="{% url 'index' %}" 
-                        class="collection-item grey darken-4 blue-text waves-effect waves-light">
-                            &nbsp;&nbsp;home<span>;</span>
-                    </a>
-                    <a href="{% url 'topics' %}" 
-                        class="collection-item grey darken-4 blue-text waves-effect waves-light">
-                            &nbsp;&nbsp;topics<span>;</span>
-                    </a>
-                    <a href="{% url 'about' %}" 
-                        class="collection-item grey darken-4 blue-text waves-effect waves-light">
-                            &nbsp;&nbsp;about<span>;</span>
-                    </a>
-                    <a href="" 
-                        class="collection-item grey darken-4 white-text waves-effect waves-light">
-                            <span>}</span>
-                    </a>
-                </div> <!-- /collection -->
-            </div> <!-- /nav -->
+            
+
+            
+                <ul id="slide-out" class="sidenav">
+                    <li><div class="user-view">
+                        <div class="background">
+                            <a href="{% url 'index' %}">
+                                <img class="responsive-img" 
+                                    src="{% static 'blog/images/icon.png' %}" 
+                                    alt="bungalow-icon" 
+                                    width="100%">
+                            </a>
+                        </div> 
+                    </div></li>
+                    <li>
+                        <a href="" class="grey darken-4 orange-text waves-effect waves-light">navigation</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'index' %}"
+                            class="grey darken-4 orange-text waves-effect waves-light">home</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'topics' %}"
+                            class="grey darken-4 orange-text waves-effect waves-light">topics</a>
+                    </li>
+                    <li>
+                        <a href="{% url 'about' %}"
+                            class="grey darken-4 orange-text waves-effect waves-light">about</a>
+                    </li>
+                    <li>
+                        <a href=""
+                            class="grey darken-4 orange-text waves-effect waves-light">}</a>
+                    </li>
+                </ul>
+            
+            <a href="" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
+
+        
         
         </div> <!-- #aside -->
         
-        <div id="page-content" class="col s10 container">
+        <div id="page-content" class="col s12 container center-align">
             {% block content %}
             {% endblock %}
         </div> <!-- #page-content-->
@@ -71,5 +77,17 @@
 
 
     <script type="text/javascript" src="{% static 'blog/js/materialize.min.js' %}"></script>
+
+    <script>
+        // Init sidenav
+        document.addEventListener('DOMContentLoaded', function() {
+            var elems = document.querySelectorAll('.sidenav');
+            var instances = M.Sidenav.init(elems);
+        });
+
+        // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
+        var collapsibleElem = document.querySelector('.collapsible');
+        var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+    </script>
 </body>
 </html>

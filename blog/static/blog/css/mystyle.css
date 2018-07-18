@@ -12,7 +12,7 @@ body {
 }
 
 #aside {
-    min-height: 90vh;
+    /* min-height: 90vh; */
 }
 
 footer {
@@ -38,4 +38,7 @@ h1.home-title {
 }
 h5.home-subtitle {
     margin: 10px 40px;
+}
+.home-latest {
+    margin: 0 40px;
 }
