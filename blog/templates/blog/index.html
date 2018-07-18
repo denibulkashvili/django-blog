@@ -1,24 +1,35 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    <h1 class="home-title">DIGITAL BUNGALOW</h1>
+    <header class="center-align">
+        <h1 class="home-title">DIGITAL BUNGALOW</h1>
+        <h5 class="home-subtitle heading h5">A blog about programming topics that interest me the most. I cover Python, JavaScript, HTML, CSS, Git and also Machine Learning and Data Science.</h4>
+    </header>
     <div class="container">
         <section class="home">
-            
-
-            <h3 class="home-subtitle">Here are the latest posts</h3>
-
-            {% if post_list %}
-                <ol>
+            <div class="home-latest">
+                <h3>Latest posts</h3>
+                {% if post_list %}
                     {% for post in post_list %}
-                        <li>
-                            <a href="post/{{post.title}}">{{post.title}}</a> in <a href="topics/{{post.topic}}">{{post.topic}}</a>
-                        </li>
+                        <div class="row ">
+                            <div class="col s12">
+                                <div class="card blue-grey darken-1">
+                                    <div class="card-content white-text">
+                                        <span class="card-title">{{post.title}}</span>
+                                        <p>Published in <a href="topics/{{post.topic}}">{{post.topic}}</a>
+                                            on {{post.date_published}}</p>
+                                    </div>
+                                    <div class="card-action">
+                                        <a href="post/{{post.title}}">Read the article</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>        
                     {% endfor %}
-                </ol>
-            {% else %}
-                There are no posts yet.
-            {% endif %}
+                {% else %}
+                    There are no posts yet.
+                {% endif %}
+            </div>
         </section>
     </div>
 {% endblock %}

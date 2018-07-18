@@ -12,7 +12,7 @@ body {
 }
 
 #aside {
-    min-height: 90vh;
+    /* min-height: 90vh; */
 }
 
 footer {
@@ -21,12 +21,14 @@ footer {
 .nav span {
     color: white;
 }
-
+.user-view.background {
+    height: 40px; 
+}
 
 /* INDEX TEMPLATE */
 h1.home-title {
-    margin: 0;
-    padding: 20px;
+    margin: 0 40px;
+    padding: 0;
     color: white;
     font-family: 'Oswald', sans-serif;
     background: url('../images/title-background.jpg')no-repeat;
@@ -36,6 +38,9 @@ h1.home-title {
     font-size: 10vw;
     font-weight: bold;
 }
-h3.home-subtitle {
-    margin-top: 50px;
+h5.home-subtitle {
+    margin: 10px 40px;
+}
+.home-latest {
+    margin: 0 40px;
 }
