@@ -9,6 +9,7 @@ body {
     flex: 1 0 auto;
     min-width: 100vw;
     margin-bottom: 0;
+    padding-right: 40px;
 }
 
 #aside {
@@ -21,9 +22,7 @@ footer {
 .nav span {
     color: white;
 }
-.user-view.background {
-    height: 40px; 
-}
+
 
 /* INDEX TEMPLATE */
 h1.home-title {

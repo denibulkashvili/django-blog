@@ -15,7 +15,6 @@
 </head>
 <body>
     <div id="wrapper" class="row blue-grey lighten-5">
-        
         <div id="aside">
             <ul id="slide-out" class="sidenav grey darken-4">
                 <li><div class="user-view">
@@ -48,9 +47,11 @@
             <a href="" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
         </div> <!-- #aside -->
         
-        <div id="page-content" class="col s12 container center-align">
+        <div id="page-content" class="col s12 center-align">
+            
             {% block content %}
             {% endblock %}
+            
         </div> <!-- #page-content-->
 
     </div> <!-- /wrapper-->
