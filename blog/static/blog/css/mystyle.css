@@ -21,7 +21,9 @@ footer {
 .nav span {
     color: white;
 }
-
+.user-view.background {
+    height: 40px; 
+}
 
 /* INDEX TEMPLATE */
 h1.home-title {
