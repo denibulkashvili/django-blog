@@ -3,9 +3,9 @@
 {% block content %}
     
     {% if post %}
-        {{post}}
-        Published on {{post.date_published}} in {{post.topic}}
-        <br>{{post.text|safe}}
+        <h3>{{post.title}}</h3>
+        <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
+        <br>{{post.text|safe}} <!-- |safe for ckeditor -->
     {% else %}
         There are no posts yet.
     {% endif %}

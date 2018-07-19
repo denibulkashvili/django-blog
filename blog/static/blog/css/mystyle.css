@@ -11,18 +11,24 @@ body {
     margin-bottom: 0;
 }
 
-#aside {
-    /* min-height: 90vh; */
-}
 
 footer {
     height: 10vh;
 }
-.nav span {
-    color: white;
+#aside ul li a {
+    font-size: 150%;
 }
-.user-view.background {
-    height: 40px; 
+.nav
+img.menu-icon {
+    height: 100%;
+}
+.iris {
+    /* background-image: url("../images/icon.png");
+    background-repeat: no-repeat; */
+    /* min-height: 16em; */
+    width: 100%;
+    /* background-size: cover; */
+
 }
 
 /* INDEX TEMPLATE */

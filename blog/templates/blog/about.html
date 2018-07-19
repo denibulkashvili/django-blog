@@ -1,7 +1,48 @@
 {% extends "blog/base.html" %}
+{% load staticfiles %}
 
 {% block content %}
     
-    This is an about page.
+    <h3>About Me</h3>
+    <div class="container">
+
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s4">
+                        <img src="{% static 'blog/images/about.jpeg' %}" alt="" class="circle responsive-img"> 
+                    </div>
+                    <div class="col s8">
+                    <span class="black-text flow-text">
+                        Hello there. I'm Denis and I write this blog to share things about the technologies that interest me. I mostly write about Python, Django, JavaScript, React and Machine Learning. 
+                    </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <div class="col s12 center-align">
+            <div class="card-panel grey lighten-5 z-depth-1 ">
+                <div class="row ">
+                    <div class="col flow-text s8 offset-s2">
+                        Contact me if you want to chat or collaborate.
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>Email</td>
+                                    <td><a href="mailto:denibulkashvili@gmail.com">denibulkashvili@gmail.com</a></td>
+                                </tr>
+                                <tr>
+                                    <td>Github</td>
+                                    <td><a href="https://github.com/denibulkashvili">denibulkashvili</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div> <!-- container-->
 
 {% endblock %}

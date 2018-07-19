@@ -1,14 +1,37 @@
 {% extends "blog/base.html" %}
 
 {% block content %}
-    Choose the topic:
+<div class="container">
+    <h3>Choose the topic:</h3>
     {% if topic_list %}
-        <ul>
-            {% for topic in topic_list %}
-            <li><a href="{{topic.title}}/">{{topic.title}}</a></li>
-            {% endfor %}
-        </ul>
+        {% for topic in topic_list %}
+            <div class="row">
+                <div class="col s12">
+                    <div class="card hoverable">
+                        <div class="card-title"><h4><a href="{{topic.title}}/">{{topic.title}}</a></h4></div>
+                        <ul class="collapsible">
+                            <li>
+                                <div class="collapsible-header"><i class="material-icons">view_list</i>Articles</div>
+                                <div class="collapsible-body left-align">
+                                        <!-- loop through the posts  -->
+                                        <ul class="collection">
+                                        {% for post in posts %}
+                                            {% if post.topic == topic %}
+                                                <a class="collection-item" href="../../post/{{post.title}}">{{post.title}}</a>
+                                            {% endif %}
+                                        {% endfor %}
+                                        </ul>
+                                    <p><a href="{{topic.title}}/">See all articles ...</a></p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
     {% else %}
         There are no topics yet.
     {% endif %}
+    
+</div>
 {% endblock %}

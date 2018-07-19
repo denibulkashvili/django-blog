@@ -15,42 +15,41 @@
 </head>
 <body>
     <div id="wrapper" class="row blue-grey lighten-5">
-        
         <div id="aside">
             <ul id="slide-out" class="sidenav grey darken-4">
+
                 <li><div class="user-view">
-                    <div class="background">
-                        <a href="{% url 'index' %}">
+                    <a href="{% url 'index' %}">
+                        <div class="iris">
                             <img class="responsive-img" 
-                                src="{% static 'blog/images/web-bungalow-icon.png' %}" 
-                                alt="bungalow-icon" 
-                                width="100%">
-                        </a>
-                    </div>
-                    <a href="">&nbsp;</a>
-                    <a href="">&nbsp;</a>
-                    <a href="{% url 'about' %}"><span class="black-text name">Blog Author: Denis Bulkashili</span></a>
-                    <a href="mailto:denibulkashvili@gmail.com"><span class="black-text email">denibulkashvili@gmail.com</span></a> 
+                                src="{% static 'blog/images/icon-circle.png' %}" 
+                                alt="bungalow-icon">
+                        </div>
+                    </a>
                 </div></li>
+
                 <li>
                     <a href="{% url 'index' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light">home</a>
+                        class="grey darken-4 orange-text waves-effect waves-light ">&lt; home /&gt;</a>
                 </li>
                 <li>
                     <a href="{% url 'topics' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light">topics</a>
+                        class="grey darken-4 orange-text waves-effect waves-light">&lt; topics /&gt;</a>
                 </li>
-                    <li>
+                <li>
                     <a href="{% url 'about' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light">about</a>
+                        class="grey darken-4 orange-text waves-effect waves-light">&lt; about /&gt;</a>
                 </li>
+                
             </ul>
             <a href="" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
         </div> <!-- #aside -->
         
-        <div id="page-content" class="col s12 container center-align">
+        <div id="page-content" class="col s12 center-align">
+            
             {% block content %}
             {% endblock %}
+            
         </div> <!-- #page-content-->
 
     </div> <!-- /wrapper-->
@@ -73,11 +72,15 @@
         document.addEventListener('DOMContentLoaded', function() {
             var elems = document.querySelectorAll('.sidenav');
             var instances = M.Sidenav.init(elems);
+
+            // Initialize collapsible 
+            
+            var elems = document.querySelectorAll('.collapsible');
+            var instances = M.Collapsible.init(elems);
+
         });
 
-        // Initialize collapsible (uncomment the lines below if you use the dropdown variation)
-        var collapsibleElem = document.querySelector('.collapsible');
-        var collapsibleInstance = M.Collapsible.init(collapsibleElem);
+        
     </script>
 </body>
 </html>
