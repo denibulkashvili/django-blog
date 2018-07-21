@@ -41,6 +41,7 @@ h1.home-title {
     background-size: cover;
     -webkit-text-fill-color: transparent;
     -webkit-background-clip: text;
+    background-clip: text;
     font-size: 10vw;
     font-weight: bold;
 }
