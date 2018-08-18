@@ -1,5 +1,10 @@
+import os
+from dotenv import load_dotenv
+load_dotenv()
+
 from django.shortcuts import get_object_or_404, render
 from .models import Topic, Post
+import requests
 
 
 def index(request):
@@ -28,3 +33,16 @@ def about(request):
 
 # def comment(request, post_id):
 #     return HttpResponse(f"You are commenting on post: {post_id}")
+
+## Geo IP API demo
+def geoip(request):
+    ip_address = request.META.get('HTTP_X_FORWARDED_FOR', '')
+    response = requests.get('http://ip-api.com/json/%s' % ip_address)
+    geodata = response.json()
+    return render(request, 'blog/geoip.html', {
+        'ip': geodata['query'],
+        'country': geodata['country'],
+        'latitude': geodata['lat'],
+        'longitude': geodata['lon'],
+        'SUBSCRIPTION_KEY': os.getenv("SUBSCRIPTION_KEY") 
+    })
