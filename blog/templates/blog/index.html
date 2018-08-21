@@ -2,14 +2,14 @@
 
 {% block content %}
     <header class="center-align">
-        <h1 class="home-title">DIGITAL BUNGALOW</h1>
-        <h5 class="home-subtitle">A blog about programming topics that interest me the most. <br/> 
+        <h1 class="home-title flow-text">DIGITAL BUNGALOW</h1>
+        <h5 class="home-subtitle flow-text">A blog about programming. <br/> 
             I cover Python, JavaScript, HTML, CSS, Git as well Machine Learning and Data Science.</h4>
     </header>
     <div class="container">
         <section class="home">
             <div class="home-latest">
-                <h3>Latest Posts</h3>
+                <h2 class="flow-text">Latest Posts</h3>
                 {% if post_list %}
                     {% for post in post_list %}
                         <div class="row">

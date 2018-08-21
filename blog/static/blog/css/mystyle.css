@@ -13,12 +13,16 @@ body {
 
 
 footer {
-    height: 10vh;
+    margin-bottom: 10px;
 }
-#aside ul li a {
+#navigation ul li a {
     font-size: 150%;
 }
-.nav
+nav .nav-wrapper a img {
+    margin-top: 5px;
+    margin-right: 20px;
+}
+
 img.menu-icon {
     height: 100%;
 }
@@ -28,8 +32,8 @@ img.menu-icon {
     /* min-height: 16em; */
     width: 100%;
     /* background-size: cover; */
-
 }
+
 
 /* INDEX TEMPLATE */
 h1.home-title {
