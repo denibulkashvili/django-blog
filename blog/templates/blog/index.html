@@ -18,7 +18,7 @@
                                     <div class="card-content white-text">
                                         <span class="card-title">{{post.title}}</span>
                                         <p>Published in <a href="topics/{{post.topic}}">{{post.topic}}</a>
-                                            on {{post.date_published}}</p>
+                                            on {{post.date_published|date:"M d, Y"}}</p>
                                     </div>
                                     <div class="card-action">
                                         <a href="post/{{post.title}}">Read the article</a>
