@@ -15,9 +15,25 @@
 </head>
 <body>
     <div id="wrapper" class="row blue-grey lighten-5">
-        <div id="aside">
-            <ul id="slide-out" class="sidenav grey darken-4">
+        
+        <div id="navigation">
 
+                <div class="navbar-fixed">
+            <nav>
+                <div class="nav-wrapper cyan darken-4">
+                    <a href="" data-target="slide-out" class="sidenav-trigger show-on-medium-and-down"><i class="material-icons medium">menu</i></a>
+                    <ul class="center-align hide-on-med-and-down">
+                        <li><a href="{% url 'index' %}">HOME</a></li>
+                        <li><a href="{% url 'topics' %}">TOPICS</a></li>
+                        <li><a href="{% url 'about' %}">ABOUT</a></li>
+                    </ul>
+                    <a href="{% url 'index' %}" class="brand-logo center hide-on-large-only"><img src="{% static 'blog/images/icon-circle.png' %}" alt="" width="50"></a>
+                    <a href="{% url 'index' %}" class="brand-logo right hide-on-med-and-down"><img src="{% static 'blog/images/icon-circle.png' %}" alt="" width="50"></a>
+                </div>
+            </nav>
+                </div>
+
+            <ul id="slide-out" class="sidenav cyan darken-4">
                 <li><div class="user-view">
                     <a href="{% url 'index' %}">
                         <div class="iris">
@@ -30,20 +46,21 @@
 
                 <li>
                     <a href="{% url 'index' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light ">&lt; home /&gt;</a>
+                        class="cyan darken-4 white-text waves-effect waves-light ">Home</a>
                 </li>
                 <li>
                     <a href="{% url 'topics' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light">&lt; topics /&gt;</a>
+                        class="cyan darken-4 white-text waves-effect waves-light">Topics</a>
                 </li>
                 <li>
                     <a href="{% url 'about' %}"
-                        class="grey darken-4 orange-text waves-effect waves-light">&lt; about /&gt;</a>
+                        class="cyan darken-4 white-text waves-effect waves-light">About </a>
                 </li>
-                
             </ul>
-            <a href="" data-target="slide-out" class="sidenav-trigger show-on-large"><i class="material-icons">menu</i></a>
-        </div> <!-- #aside -->
+            
+            
+                
+        </div> <!-- #navigation -->
         
         <div id="page-content" class="col s12 center-align">
             
@@ -54,13 +71,10 @@
 
     </div> <!-- /wrapper-->
 
-    <footer class="page-footer teal darken-4">
-        <div class="container">
-            <div class="footer-copyright">
-              <div class="container">
-                Digital Bungalow Blog © 2018
-            </div>
-        </div>
+    <footer class="page-footer cyan darken-4 center-align">
+        
+              Digital Bungalow Blog © 2018
+        
     </footer>
 
 
