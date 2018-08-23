@@ -55,3 +55,20 @@ h5.home-subtitle {
 .home-latest {
     margin: 0 40px;
 }
+
+/* ABOUT PAGE */
+.about-card {
+    display: flex;
+    flex-direction: row;
+}
+.about-img img {
+    width: 80%;
+}
+@media screen and (max-width: 992px) {
+    .about-card {
+        flex-direction: column;
+    }
+    .about-img img {
+        width: 50%;
+    }
+  }

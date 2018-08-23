@@ -7,37 +7,25 @@
     <div class="container">
 
         <div class="col s12">
-            <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row valign-wrapper">
-                    <div class="col s4">
-                        <img src="{% static 'blog/images/about.jpeg' %}" alt="" class="circle responsive-img"> 
-                    </div>
-                    <div class="col s8">
-                    <span class="black-text flow-text">
-                        Hello there. I'm Denis and I write this blog to share things about the technologies that interest me. I mostly write about Python, Django, JavaScript, React and Machine Learning. 
-                    </span>
-                    </div>
+            <div class="card-panel grey lighten-5 z-depth-1 about-card">
+                <div class="about-img">
+                    <img src="{% static 'blog/images/about.jpeg' %}" alt="" class="circle responsive-img"> 
+                </div>
+                <div class="about-info black-text flow-text valign-wrapper">
+                    Hello there. I'm Denis and I write this blog to share things about the technologies that interest me. I mostly write about Python, Django, JavaScript, React and Machine Learning. 
                 </div>
             </div>
         </div>
     
-        <div class="col s12 center-align">
-            <div class="card-panel grey lighten-5 z-depth-1 ">
-                <div class="row ">
-                    <div class="col flow-text s8 offset-s2">
-                        Contact me if you want to chat or collaborate.
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td>Email</td>
-                                    <td><a href="mailto:denibulkashvili@gmail.com">denibulkashvili@gmail.com</a></td>
-                                </tr>
-                                <tr>
-                                    <td>Github</td>
-                                    <td><a href="https://github.com/denibulkashvili">denibulkashvili</a></td>
-                                </tr>
-                            </tbody>
-                        </table>
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row">
+                    <div class="col flow-text s12">
+                        <span class="center-align">Contact me if you want to chat or collaborate.</span>
+                        <div class="collection">
+                            <a href="mailto:denibulkashvili@gmail.com" class="collection-item">Email: denibulkashvili@gmail.com</a></td>
+                            <a href="https://github.com/denibulkashvili" class="collection-item">Github: denibulkashvili</a></td>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -45,11 +33,12 @@
 
         <div class="col s12">
             <div class="card-panel grey lighten-5 z-depth-1">
-                <div class="row">
-                    <h3 class="col s12">Projets Showcase</h3>
+                <h3>Projets Showcase</h3>
+                <div class="row about-project">
+                    
 
-                    <div class="col s6">
-                        <div class="card">
+                    <div class="col l6 s12">
+                        <div class="card hoverable">
                             <div class="card-image">
                                 <img src="{% static 'blog/images/digital-prntscn.jpg' %}" class="responsive-img">
                             </div>
@@ -64,8 +53,8 @@
                         </div> 
                     </div>
 
-                    <div class="col s6">
-                        <div class="card">
+                    <div class="col l6 s12">
+                        <div class="card hoverable">
                             <div class="card-image">
                                 <img src="{% static 'blog/images/youtube-prntscn.jpg' %}" class="responsive-img">
                             </div>
