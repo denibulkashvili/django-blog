@@ -2,13 +2,17 @@
 
 {% block content %}
     
-    {% if post %}
-        <h3>{{post.title}}</h3>
-        <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
-        <br>{{post.text|safe}} <!-- |safe for ckeditor -->
-    {% else %}
-        There are no posts yet.
-    {% endif %}
+    <div class="container">
+        {% if post %}
+            <h3>{{post.title}}</h3>
+            <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
+            <div class="left-align">
+                {{post.text|safe}} <!-- |safe for ckeditor -->
+            </div>
+        {% else %}
+            The post doesn't exist.
+        {% endif %}
+    </div>
 
     <div class="more-posts">
         <h4>More Articles</h4>
@@ -27,3 +31,4 @@
         </div>
     </div>
 {% endblock %}
+

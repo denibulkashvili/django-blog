@@ -1,0 +1,49 @@
+{% extends "blog/base.html" %}
+{% load staticfiles %}
+
+{% block content %}
+    
+    <h3>Geolocation API Demo</h3>
+    <div class="container">
+
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s12">
+                        Based on your IP {{ ip }}, you are located in {{ country }}.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s12">
+                        <iframe 
+                            width="500" 
+                            height="400" 
+                            frameborder="0" 
+                            src="https://www.bing.com/maps/embed?h=400&w=500&cp={{ latitude }}~{{ longitude }}&lvl=11&typ=d&sty=r&src=SHELL&FORM=MBEDV8" 
+                            scrolling="no"
+                        >
+                        </iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col s12">
+            <div class="card-panel grey lighten-5 z-depth-1">
+                <div class="row valign-wrapper">
+                    <div class="col s12">
+                        This is a demo of using geodata API in Django application. 
+                        For a tutorial and code snippets, see the <a href="http://bulkashvili.com/post/How%20to%20use%20RESTful%20APIs%20in%20Django/">article</a>.
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </div> <!-- container-->
+
+{% endblock %}
