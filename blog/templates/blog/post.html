@@ -2,29 +2,33 @@
 
 {% block content %}
     
-    {% if post %}
-        <h3>{{post.title}}</h3>
-        <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
-        <br>{{post.text|safe}} <!-- |safe for ckeditor -->
-    {% else %}
-        There are no posts yet.
-    {% endif %}
-
-    <div class="more-posts">
-        <h4>More Articles</h4>
-        <div class="col s12">
-            {% if random_posts %}
-                {% for post in random_posts %}
-                    <div class="card horizontal">
-                        <a href="topics/{{post.topic}}">
-                            <h5 class="card-content">{{ post.title }}</h5>
-                        </a>
-                    </div>
-                {% endfor %}
-            {% else %}
-                There are no random posts.
-            {% endif %}
-        </div>
-    </div>
+    <div class="container">
+        {% if post %}
+            <h3>{{post.title}}</h3>
+            <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
+            <div class="left-align">
+                {{post.text|safe}} <!-- |safe for ckeditor -->
+            </div>
+        {% else %}
+            The post doesn't exist.
+        {% endif %}
     
+        <div class="more-posts">
+            <h4>More Articles</h4>
+            <div class="col s12">
+                {% if random_posts %}
+                    {% for post in random_posts %}
+                        <a href="../../post/{{post.title}}">
+                            <div class="card horizontal">
+                                <h5 class="card-content">{{ post.title }}</h5>
+                            </div>
+                        </a>
+                    {% endfor %}
+                {% else %}
+                    There are no random posts.
+                {% endif %}
+            </div>
+        </div>
+
+    </div> <!-- container-->
 {% endblock %}
