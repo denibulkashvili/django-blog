@@ -13,7 +13,8 @@ body {
 
 
 footer {
-    margin-bottom: 10px;
+    margin-bottom: 0px;
+    padding-bottom: 10px;
 }
 #navigation ul li a {
     font-size: 150%;
@@ -26,6 +27,7 @@ nav .nav-wrapper a img {
 img.menu-icon {
     height: 100%;
 }
+
 .iris {
     /* background-image: url("../images/icon.png");
     background-repeat: no-repeat; */
@@ -55,4 +57,5 @@ h5.home-subtitle {
 .home-latest {
     margin: 0 40px;
 }
+
 
