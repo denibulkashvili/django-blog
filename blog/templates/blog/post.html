@@ -10,4 +10,20 @@
         There are no posts yet.
     {% endif %}
 
+    <div class="more-posts">
+        <h4>More Articles</h4>
+        <div class="col s12">
+            {% if random_posts %}
+                {% for post in random_posts %}
+                    <div class="card horizontal">
+                        <a href="topics/{{post.topic}}">
+                            <h5 class="card-content">{{ post.title }}</h5>
+                        </a>
+                    </div>
+                {% endfor %}
+            {% else %}
+                There are no random posts.
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

@@ -1,4 +1,5 @@
 from django.shortcuts import get_object_or_404, render
+import random
 from .models import Topic, Post
 
 
@@ -20,7 +21,9 @@ def topic(request, topic_title):
 
 def post(request, post_title):
     post = get_object_or_404(Post, title=post_title)
-    context = {'post': post}
+    all_posts = Post.objects.order_by('-date_published')
+    random_posts = [all_posts[x] for x in random.sample(range(1, len(all_posts)), 2)] #2 rand posts
+    context = {'post': post, 'random_posts': random_posts}
     return render(request, 'blog/post.html', context)
 
 def about(request):
