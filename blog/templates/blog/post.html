@@ -18,12 +18,14 @@
             <h4>More Articles</h4>
             <div class="col s12">
                 {% if random_posts %}
-                        {% for post in random_posts %}
-                            <a href="../../post/{{post.title}}">
-                                <div class="card horizontal">
-                                    <h5 class="card-content">{{ post.title }}</h5>
-                                </div>
-                            </a>
+                        {% for rand_post in random_posts %}
+                            {% if rand_post != post %}
+                                <a href="../../post/{{rand_post.title}}">
+                                    <div class="card horizontal">
+                                        <h5 class="card-content">{{ rand_post.title }}</h5>
+                                    </div>
+                                </a>
+                            {% endif %}
                         {% endfor %}
                 {% else %}
                     <a href="../../topics">
