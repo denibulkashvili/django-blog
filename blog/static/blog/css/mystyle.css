@@ -59,3 +59,7 @@ h5.home-subtitle {
 }
 
 
+/* POST IMAGES */
+.article-content > p:nth-child(1) {
+    text-align: center;
+}

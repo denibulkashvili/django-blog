@@ -6,7 +6,7 @@
         {% if post %}
             <h3>{{post.title}}</h3>
             <p>published on <b>{{post.date_published|date:"M d, Y"}}</b> in <a href="../../topics/{{post.topic.title}}/">{{post.topic}}</a></p>
-            <div class="left-align">
+            <div class="left-align article-content">
                 {{post.text|safe}} <!-- |safe for ckeditor -->
             </div>
         {% else %}
