@@ -1,6 +1,6 @@
 certifi==2018.4.16
 dj-database-url==0.4.2
-Django==2.0.5
+Django==2.2.24
 django-ckeditor==5.6.1
 django-js-asset==1.1.0
 gunicorn==19.9.0
